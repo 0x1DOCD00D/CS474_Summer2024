@@ -100,7 +100,7 @@ fabric.properties
 .idea/**/markdown-navigator.xml
 .idea/**/markdown-navigator/
 
-.idea/*.xml
+.idea/**/*.xml
 *.class
 *.log
 lib/

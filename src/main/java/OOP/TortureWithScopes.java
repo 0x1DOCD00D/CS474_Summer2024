@@ -13,6 +13,7 @@ public class TortureWithScopes {
         {
             int prop1 = 3;
             {
+                System.out.println("inside s3: "+String.valueOf(prop1));
             }
         }
         new InnerC().f();

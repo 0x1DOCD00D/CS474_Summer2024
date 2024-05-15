@@ -1,14 +1,14 @@
 package OOP;
 
 public class City {
+    public int creditScore = 500;
     public abstract class Person {
+        public int creditScore = 300;
         enum EMPLOYMENT {
             EMPLOYED, JOBLESS {
+                public int creditScore = 100;
                 void g() {
                     System.out.println("EMPLOYMENT.g");
-/*                    void gg() {
-
-                    }*/
                 }
             }, PARTTIME {
                 void f() {
@@ -17,7 +17,7 @@ public class City {
             }
         }
 
-        EMPLOYMENT lof;//level of emp
+        EMPLOYMENT lof = EMPLOYMENT.JOBLESS;//level of emp
 
         abstract float production();
 
@@ -33,7 +33,7 @@ public class City {
     class OfficeWorker extends Person {
         @Override
         float production() {
-            return 1.0f;
+            return lof.ordinal();
         }
 
         public OfficeWorker(EMPLOYMENT e) {

@@ -2,11 +2,18 @@ package OOP;
 
 public class TortureWithScopes {
     int prop1 = 1;
+    TortureWithScopes getThisDamnThing(){
+        return this;
+    }
     {
-        class InnerC {
-            int prop1 = 10;
-            void f(){
-                System.out.println(String.valueOf(prop1));
+        class OuterOfTheInner {
+            int prop1 = 7;
+            class InnerC {
+                int prop1 = 10;
+
+                void f() {
+                    System.out.println("inside of f: " + String.valueOf(OuterOfTheInner.this.prop1));
+                }
             }
         }
         prop1 = 2;
@@ -16,7 +23,7 @@ public class TortureWithScopes {
                 System.out.println("inside s3: "+String.valueOf(prop1));
             }
         }
-        new InnerC().f();
+        new OuterOfTheInner().new InnerC().f();
     }
 
 

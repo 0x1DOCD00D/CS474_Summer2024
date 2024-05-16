@@ -15,7 +15,7 @@ public class ExperimentWithStaticThingies {
     }
 
     class A {
-        static class B {
+         class B {
             static class C {
                 class D {
                     static class E {
@@ -29,7 +29,17 @@ public class ExperimentWithStaticThingies {
     }
 
     public static void main(String[] args) {
-        ExperimentWithStaticThingies.A.B.C.D.E.F instanceOfF = ExperimentWithStaticThingies A().B.C.new D().E.new F();
+        ExperimentWithStaticThingies.A.B.C.D.E.F iOfF = new ExperimentWithStaticThingies.A.B.C.D.E().new F();
+        ExperimentWithStaticThingies.A.B.C.D.E iOfE = new ExperimentWithStaticThingies.A.B.C.D.E();
+        ExperimentWithStaticThingies.A.B.C.D iOfD = new ExperimentWithStaticThingies.A.B.C().new D();
+        ExperimentWithStaticThingies.A.B.C iOfC = new ExperimentWithStaticThingies.A.B.C();
+        ExperimentWithStaticThingies.A.B iOfB = new ExperimentWithStaticThingies().new A().new B();
+        ExperimentWithStaticThingies.A iOfA = new ExperimentWithStaticThingies().new A();
+        System.out.println(iOfF.toString());
+        System.out.println(iOfE.toString());
+        System.out.println(iOfD.toString());
+        System.out.println(iOfC.toString());
+        System.out.println(iOfB.toString());
 
         ExperimentWithStaticThingies i1 = new ExperimentWithStaticThingies();
         ExperimentWithStaticThingies i2 = new ExperimentWithStaticThingies();

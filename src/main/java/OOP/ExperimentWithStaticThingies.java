@@ -14,6 +14,11 @@ public class ExperimentWithStaticThingies {
         field = 70;
     }
 
+    void g(){}
+    class Natalia {
+        void g(){}
+    }
+
     class A {
          class B {
             static class C {

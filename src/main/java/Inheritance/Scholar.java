@@ -6,6 +6,7 @@ public class Scholar {
     }
 
     public static void main(String[] args) {
+        Scholar obj = new Professor();
         Scholar [] scholars = {new Scholar(), new Professor(), new Postdog(), new Student(), new Student()};
         CLI inp = new CLI();
         int ind = inp.getInput();
@@ -13,6 +14,9 @@ public class Scholar {
 
         Integer res = scholars[ind].doSomethingCool();
         System.out.println(res.toString());
+        for (int i = 0; i < 5; i++) {
+            System.out.println(scholars[i].doSomethingCool());
+        }
     }
 }
 

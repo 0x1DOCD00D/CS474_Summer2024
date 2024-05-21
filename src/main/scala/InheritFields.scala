@@ -1,6 +1,6 @@
 object InheritFields:
   class C1:
-    val field = 1
+    val field = 0
 
   class C2 extends C1:
     override val field: Int = 2

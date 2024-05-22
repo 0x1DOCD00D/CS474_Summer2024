@@ -9,11 +9,9 @@ public class UpcastDowncast {
         public void f(){}
     }
 
-
     public static void main(String[] args) {
         UpcastDowncast outer = new UpcastDowncast();
         UpcastDowncast.C1 o = outer.new C5();
         ((C5)o).f();
-
     }
 }

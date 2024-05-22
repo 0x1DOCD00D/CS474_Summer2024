@@ -15,6 +15,8 @@ public class DataProcessor {
     }
 
     public static void main(String[] args) {
+//        new DbSupertype().x;
+//        System.out.println(DbSupertype.x);
         new DataProcessor().process(new OracleDb());
         new DataProcessor().process(new SqlServerDb());
         new DataProcessor().process(new PostgressDb());

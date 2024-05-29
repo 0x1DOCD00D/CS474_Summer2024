@@ -1,7 +1,7 @@
 object BreakingBad {
   class BreakException extends Exception
   def `I want to break this damn thing because I am an evil programmer` = throw new BreakException
-  def breakable(codeBlock: => Unit) =
+  def breakable[T](codeBlock: => T) =
     try {
       codeBlock
     }

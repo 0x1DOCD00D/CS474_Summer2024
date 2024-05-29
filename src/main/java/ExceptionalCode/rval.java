@@ -13,7 +13,7 @@ public class rval {
               }
        }
        public static void main(String[] args) {
-              rval r = new rval();
+              GamesWithAbNormal r = new GamesWithAbNormal();
               System.out.println(r.rv());
        }
  

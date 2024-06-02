@@ -15,8 +15,12 @@ object BlocksOfCode:
     codeBlock
     println("codeblock")
 
-  def IFF(cond: => Boolean, thenCode: => Unit, elseCode: => Unit) =
-    if cond then elseCode else thenCode
+  def IFF(cond: => Boolean, thenCode: => Unit, elseCode:() => Unit) =
+    if cond then thenCode else elseCode()
+    elseCode()
+    elseCode()
+    elseCode()
+    elseCode()
 
   def f(i:Int) =//strict evaluation
     val j = 2
@@ -26,11 +30,23 @@ object BlocksOfCode:
 
   @main def runBlockofCode =
     println("inside the main")
-    fBlockTake {
-      println("experiments with passing a block")
-      val y = 2+3
-      y+5
-    }
+    println(IFF(
+      {
+        println("condition")
+        2 == 3
+      },
+      {
+        println("then")
+      },
+      ()=>{
+        println("else")
+      }
+    ))
+//    fBlockTake {
+//      println("experiments with passing a block")
+//      val y = 2+3
+//      y+5
+//    }
 //    println(takeIt()(10))
 //    println(x())
 //    println(x())
